@@ -1,0 +1,17 @@
+# Program to run
+program: main_cifar.py
+# Method
+method: grid
+# project name
+project: project_relu_demi
+
+
+# metric to optimize
+metric:
+  name: test_loss
+  goal: minimize
+
+# Hyperparameters
+parameters:
+  seed:
+    values: [ 1,2,3 ]

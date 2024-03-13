@@ -1,0 +1,41 @@
+# Program to run
+program: main_reward_finding_basic.py
+# Method
+method: grid
+# project name
+project: project_relu_demi
+
+
+# metric to optimize
+metric:
+  name: average_reward
+  goal: maximize
+
+# Hyperparameters
+parameters:
+  seed:
+    values: [1,2,3]
+  map_type:
+    values: ["random_with_rewards"]
+  fill_buffer:
+    values: [20000]
+  higher_dim_bool:
+    values: [True]
+  activation:
+    values: ['relu']
+  latent_dim:
+    values: [512]
+  gamma:
+    values: [0.85]
+  tau:
+    values: [0.02]
+  device:
+    values: ['mpu']
+  lr_encoder:
+    values: [5e-5] # , 5e-4, 5e-3, 5e-6, 1e-5, 1e-4, 1e-3, 1e-6
+  lr_dqn:
+    values: [5e-5] # , 5e-4, 5e-3, 1e-5, 5e-6, 1e-6, 1e-3
+  experiment:
+    values: ["standard"]
+  reward_scale:
+    values: [1, 0.1, 0.01, 10, 100]
